@@ -1,29 +1,53 @@
 {% extends "base.html" %}
 {% block content %}
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
 
-<div class="container">
-  <div class="row">
-    <div class="col-6">
-      <img class="card-img-top" src={{personaje_data.image_url}} alt="Card image cap">
+
+<div class="container bg-light">
+  <div class="row ">
+    <div>
     </div>
     <div class="col-6">
-
-      <div class="card-body">
-          <h5 class="card-title">{{personaje_data.name}}</h5>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">status: {{personaje_data.alive}}</li>
-          <li class="list-group-item">species: {{personaje_data.species}}</li>
-          <li class="list-group-item">type: {{ 'Alive' if personaje_data.typo else 'Dead' }}</li>
-          <li class="list-group-item">gender: {{personaje_data.gender}}</li>
-          <li class="list-group-item">origin: {{personaje_data.origin}}</li>
-          <li class="list-group-item">location: {{personaje_data.location_name}}</li>
-          <li class="list-group-item">First episode: {{personaje_data.episode}}</li>
-          <li class="list-group-item">Number of episodes: {{personaje_data.episode_n|length}}</li>
-          <li class="list-group-item">created: {{personaje_data.created}}</li>
-          </ul>
+      <img class="card-img-top" src={{personaje_data.image_url}} alt="">
+    </div>
+    <div class="col-6">
+      <div class="card-body m-3">
+          <h1 class="text-info display-1"><b>{{personaje_data.name}}</b></h1>
+          <hr>
+          <h2 >
+            <b class="text-danger">Estatus:</b> {{personaje_data.alive}}
+          </h2>
+          <h2 >
+            <b class="text-danger">Especies:</b> {{personaje_data.species}}
+          </h2>
+          <h2 >
+            <b class="text-danger">Tipo:</b> {{ 'Alive' if personaje_data.typo else 'Dead' }}
+          </h2>
+          <h2 >
+            <b class="text-danger">Género:</b> {{personaje_data.gender}}
+          </h2>
+          <h2 >
+            <b class="text-danger">Origen:</b> {{personaje_data.origin}}
+          </h2>
+          <h2 >
+            <b class="text-danger">Locación:</b> {{personaje_data.location_name}}
+          </h2>
+          <h2 >
+            <b class="text-danger">Primer Episodio:</b> {{personaje_data.episode}}
+          </h2>
+          <h2 >
+            <b class="text-danger">Episodios:</b> {{personaje_data.episode}}
+          </h2>
+          <h2 >
+            <b class="text-danger">Numero de Episodios:</b> {{personaje_data.episode_n|length}}
+          </h2>
+          <h2 >
+            <b class="text-danger">Creado en:</b> {{personaje_data.created}}
+          </h2>
+          
+      </div>
+      <div class="d-grid gap-2">
+        <a href="{{url_for('personaje_router.index')}}" class="btn btn-primary m-3"><h2>Regresar a lista de personajes</h2></a>
       </div>
     </div>
   </div>

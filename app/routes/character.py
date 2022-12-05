@@ -12,6 +12,7 @@ def index():
     characters = db.collection.find().sort('_id', 1)
     return render_template('index.html', characters=characters)
 
+#VER DETALLER PERSONAJES
 @personaje_router.route('/profile/<id>')
 def profile(id):
     id = int(id)
