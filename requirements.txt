@@ -1,0 +1,6 @@
+flask
+flask-bootstrap
+flask-wtf
+python-dotenv
+PyMongo
+requests
